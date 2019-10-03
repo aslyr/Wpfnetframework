@@ -1,0 +1,82 @@
+﻿<Window x:Name="mainWinow" x:Class="Wpfnetframework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpfnetframework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="555" Width="800" Loaded="mainWinow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="2" />
+            <RowDefinition />
+            <RowDefinition Height="2" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="12" BorderBrush="Green" Margin="0,30,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Button" HorizontalAlignment="Left" Margin="45,21,0,0" VerticalAlignment="Top" Click="Button_Click" />
+                <Button Content="Button" HorizontalAlignment="Left" Margin="45,21,0,0" VerticalAlignment="Top" Click="Button_Click" />
+                <TextBox x:Name="textbox1" MinLines="5" Margin="45,21,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" MaxWidth="200
+" VerticalAlignment="Top"  RenderTransformOrigin="0.633,1.471" MinWidth="100" SelectionBrush="#FFCE8D2F" SelectionChanged="textbox1_SelectionChanged">
+                </TextBox>
+
+                <Image Width="100" MaxHeight="240" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <Ellipse Margin="0,0,12,12" Fill="Red" Stroke="Black" Width="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button  Width="100" Height="100" HorizontalAlignment="Left">高凯</Button>
+            <Button  Width="100" Height="100" HorizontalAlignment="Left">高凯</Button>
+            <Button  Width="100" Height="100" HorizontalAlignment="Left">高凯</Button>
+            <Button  Width="100" Height="100" HorizontalAlignment="Left">高凯</Button>
+        </StackPanel>
+        <GridSplitter Grid.Row="1" Height="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="2" ShowsPreview="True" />
+        <ScrollViewer  Grid.Row="4">
+            <StackPanel>
+                <Button>选择模式</Button>
+                <ComboBox x:Name="combobox1"  SelectionChanged="combobox1_SelectionChanged">
+                    <ComboBoxItem>ink</ComboBoxItem>
+                    <ComboBoxItem>select</ComboBoxItem>
+                    <ComboBoxItem>apple</ComboBoxItem>
+                    <ComboBoxItem>huawei</ComboBoxItem>
+                </ComboBox>
+                <InkCanvas Name="inkcanvas" EditingMode="Ink" Grid.Row="4"  Background="AntiqueWhite">
+                </InkCanvas>
+                <WrapPanel  Name="wrappanel1">
+                    <Button Width="300">fdfdf</Button>
+                    <Button Width="500">wrapanel</Button>
+                    <Button Width="112">wrapanel</Button>
+                    <Button>wrapanel</Button>
+                    <Button>wrapanel</Button>
+                    <Button>wrapanel</Button>
+                </WrapPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DockPanel LastChildFill="True">
+                        <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                            <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
+                            <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
+                            <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
+                            <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
+                            <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
+                        </WrapPanel>
+                        <Button DockPanel.Dock="Bottom">bottom</Button>
+                        <Button DockPanel.Dock="Left">left</Button>
+                        <Button DockPanel.Dock="Right">right</Button>
+                        <Button>last</Button>
+                    </DockPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

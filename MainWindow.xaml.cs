@@ -53,7 +53,7 @@ namespace Wpfnetframework
 
         private void textbox1_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            this.Title = ((TextBox)sender).SelectedText;
+            
         }
 
         
@@ -72,6 +72,11 @@ namespace Wpfnetframework
         private void combobox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             inkcanvas.EditingMode = (InkCanvasEditingMode)combobox1.SelectedItem;
+        }
+
+        private void textbox1_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            this.Title = e.Key.ToString();
         }
     }
 }

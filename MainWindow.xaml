@@ -19,7 +19,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="Button" HorizontalAlignment="Left" Margin="45,21,0,0" VerticalAlignment="Top" Click="Button_Click" />
                 <Button Content="Button" HorizontalAlignment="Left" Margin="45,21,0,0" VerticalAlignment="Top" Click="Button_Click" />
-                <TextBox x:Name="textbox1" MinLines="5" Margin="45,21,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" MaxWidth="200
+                <TextBox x:Name="textbox1" PreviewKeyDown="textbox1_PreviewKeyDown" MinLines="5" Margin="45,21,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" MaxWidth="200
 " VerticalAlignment="Top"  RenderTransformOrigin="0.633,1.471" MinWidth="100" SelectionBrush="#FFCE8D2F" SelectionChanged="textbox1_SelectionChanged">
                 </TextBox>
 
@@ -53,15 +53,17 @@
                     <Button>wrapanel</Button>
                     <Button>wrapanel</Button>
                 </WrapPanel>
-                <Grid>
+                <Grid UseLayoutRounding="True">
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                   
                     <DockPanel LastChildFill="True">
                         <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
                             <Button DockPanel.Dock="Top" Width="120">Topbutton</Button>
@@ -75,6 +77,10 @@
                         <Button DockPanel.Dock="Right">right</Button>
                         <Button>last</Button>
                     </DockPanel>
+                    <GridSplitter Grid.Column="1" Width="3" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Stretch"></GridSplitter>
+                    <TextBlock Grid.Column="2">
+                        <!--冒泡路由事件-->
+                        <TextBlock.Text>dfjdkfjdkfdf</TextBlock.Text></TextBlock>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
